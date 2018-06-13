@@ -64,6 +64,7 @@ def build_vectors(fips_vectors):
             yield "d = {0:x}".format(secret_key.privkey.secret_multiplier)
             yield "Qx = {0:x}".format(public_key.pubkey.point.x())
             yield "Qy = {0:x}".format(public_key.pubkey.point.y())
+            yield "sig = {0}".format(hexlify(signature))
             yield "R = {0:x}".format(r)
             yield "S = {0:x}".format(s)
             yield ""
