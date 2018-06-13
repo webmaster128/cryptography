@@ -15,11 +15,7 @@ from tests.utils import (
 )
 
 HASHLIB_HASH_TYPES = {
-    "SHA-1": hashlib.sha1,
-    "SHA-224": hashlib.sha224,
     "SHA-256": hashlib.sha256,
-    "SHA-384": hashlib.sha384,
-    "SHA-512": hashlib.sha512,
 }
 
 
