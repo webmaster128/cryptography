@@ -46,12 +46,12 @@ def build_vectors(fips_vectors):
 
         for message in messages:
             # Make a hash context
-            hash_func = TruncatedHash(HASHLIB_HASH_TYPES[digest_algorithm]())
+            hash_func = hashlib.sha256
 
             # Sign the message using warner/ecdsa
             secret_key = SigningKey.generate(curve=SECP256k1)
             public_key = secret_key.get_verifying_key()
-            signature = secret_key.sign(message, hashfunc=hash_func,
+            signature = secret_key.sign_deterministic(message, hashfunc=hash_func,
                                         sigencode=sigencode_der)
 
             r, s = sigdecode_der(signature, None)
